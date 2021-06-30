@@ -1,0 +1,84 @@
+<div class="testi">
+    <h2 style="text-align: center;">Inscription</h2>
+    <br>
+    <div class="f">
+        <div class="droite">
+            <form [formGroup]="userForm" (ngSubmit)="onSubmit()">
+        
+            <div class="form-group" style="display: flex; margin-bottom: 15px;">
+                <label for="username" style="flex: 1;">Pseudo<span style="color: red;" *ngIf="usernameCtl.errors?.required">*</span>
+                    <span *ngIf=userContent()>
+                        <small style="color: red;" *ngIf="usernameCtl.hasError('usernameExist')"> (Indisponible)</small>
+                        <small style="color: green;" *ngIf="!usernameCtl.hasError('usernameExist')"> (Disponible)</small>
+                    </span>
+                </label>
+                <input type="text" id="username" class="form-control" formControlName="username" style="flex: 7;">
+                
+            </div>
+    
+            <div class="form-group" style="display: flex; margin-bottom: 15px;">
+                <label for="name" style="flex: 1;">Nom<span style="color: red;" *ngIf="nameCtl.errors?.required">*</span></label>
+                <input type="text" id="name" class="form-control" formControlName="name" style="flex: 7;">
+            </div>
+        
+            <div class="form-group" style="display: flex; margin-bottom: 15px;">
+                <label for="first_name" style="flex: 1;">Prénom<span style="color: red;" *ngIf="firstnameCtl.errors?.required">*</span></label>
+                <input type="text" id="first_name" class="form-control" formControlName="first_name" style="flex: 7;">
+            </div>
+        
+            <div class="form-group" style="display: flex; margin-bottom: 15px;">
+                <label for="email" style="flex: 1;">Email<span style="color: red;" *ngIf="emailCtl.errors?.required">*</span></label>
+                <input type="email" id="email" class="form-control" formControlName="email" style="flex: 7;">
+            </div>
+    
+            <div class="form-group" style="display: flex; margin-bottom: 15px;">
+                <label for="birthdate" style="flex: 1;">Date de naissance<span style="color: red;" *ngIf="birthdateCtl.errors?.required">*</span></label>
+                <input type="date" id="birthdate" class="form-control" formControlName="birthdate" style="flex: 7;">
+            </div>
+        
+            <div class="form-group deux">
+                <div class="grand">
+                    <label for="address">Adresse</label><span style="color: red;" *ngIf="addressCtl.errors?.required">*</span>
+                    <input type="text" id="address" class="form-control" formControlName="address">
+                </div>
+                <div class="petit"></div>
+                <div class="petit">
+                    <label for="address_number">Numéro</label><span style="color: red;" *ngIf="numberCtl.errors?.required">*</span>
+                    <input type="number" id="address_number" class="form-control" formControlName="address_number" min="1" step="1">
+                </div>
+            </div>
+            
+            <div class="form-group deux">
+                <div class="grand">
+                    <label for="city">Ville</label><span style="color: red;" *ngIf="cityCtl.errors?.required">*</span>
+                    <input type="text" id="city" class="form-control" formControlName="city">
+                </div>
+                <div class="petit"></div>
+                <div class="petit">
+                    <label for="zip_code">Code postal</label><span style="color: red;" *ngIf="zipCtl.errors?.required">*</span>
+                    <input type="number" id="zip_code" class="form-control" formControlName="zip_code" min="1" step="1">
+                </div>
+            </div>
+            
+    
+            
+    
+            <div class="form-group deux">
+                <div class="grand">
+                    <label for="password">Mot de passe</label><span style="color: red;" *ngIf="passwordCtl.errors?.required">*</span> <span style="color: red;" *ngIf="passwordCtl.errors?.minlength"> Minimum 6 caractères</span>
+                    <input type="password" id="password" class="form-control" formControlName="password">
+                </div>
+                <div class="petit"></div>
+                <div class="grand">
+                    <label for="passwordConfirm">Confirmez</label><span style="color: red;" *ngIf="passwordConfirmCtl.errors?.required">*</span> <span style="color: red;" *ngIf="passwordConfirmCtl.hasError('pwdNotEqual')"> Le mot de passe n'est pas le même</span>
+                    <input type="password" id="passwordConfirm" class="form-control" formControlName="passwordConfirm">
+                </div>
+            </div>
+            <br>
+            <div style="text-align: center;">
+                <button type="submit" class="btn bt" style="color: black; background-color: white;" [disabled]="userForm.invalid">S'inscrire</button>
+            </div>
+        </form>
+        </div>
+    </div>
+</div>

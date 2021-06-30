@@ -1,0 +1,55 @@
+<div class="testi">
+    <h2 style="text-align: center;">Modifier le produit</h2>
+    <br>
+    <div class="f">
+        <div class="droite">
+            <form [formGroup]="editForm" (ngSubmit)="onSubmitForm()" *ngIf=editForm>
+        
+            <!-- <div class="form-group" style="display: flex; margin-bottom: 15px;">
+                <label for="reference" style="flex: 1;">Référence<span style="color: red;" *ngIf="referenceCtl.errors?.required">*</span></label>
+                <input type="text" id="reference" class="form-control" formControlName="reference" style="flex: 7;">
+                
+            </div> -->
+    
+            <div class="form-group" style="display: flex; margin-bottom: 15px;">
+                <label for="name" style="flex: 1;">Nom<span style="color: red;" *ngIf="nameCtl.errors?.required">*</span></label>
+                <input type="text" id="name" class="form-control" formControlName="name" style="flex: 7;">
+            </div>
+        
+            <div class="form-group" style="display: flex; margin-bottom: 15px;">
+                <label for="stock" style="flex: 1;">Stock<span style="color: red;" *ngIf="stockCtl.errors?.required">*</span></label>
+                <input type="number" id="stock" class="form-control" formControlName="stock" style="flex: 7;">
+            </div>
+        
+            <div class="form-group" style="display: flex; margin-bottom: 15px;">
+                <label for="price" style="flex: 1;">Prix<span style="color: red;" *ngIf="priceCtl.errors?.required">*</span></label>
+                <input type="number" id="price" class="form-control" formControlName="price" style="flex: 7;">
+            </div>
+    
+            <div class="form-group" style="display: flex; margin-bottom: 15px;">
+                <label for="image_url" style="flex: 1;">URL de l'image<span style="color: red;" *ngIf="image_urlCtl.errors?.required">*</span></label>
+                <input type="text" id="image_url" class="form-control" formControlName="image_url" style="flex: 7;">
+            </div>
+        
+            <div class="form-group" style="display: flex; margin-bottom: 15px;">
+                <label for="description" style="flex: 1;">Description<span style="color: red;" *ngIf="descriptionCtl.errors?.required">*</span></label>
+                <textarea type="text" id="description" class="form-control" formControlName="description" rows="7" style="flex: 7; resize: none;"></textarea>
+            </div>
+    
+            <div class="form-group" style="display: flex; margin-bottom: 15px;">
+                <label for="emploi" style="flex: 1;">Emploi<span style="color: red;" *ngIf="emploiCtl.errors?.required">*</span></label>
+                <textarea type="text" id="emploi" class="form-control" formControlName="emploi" rows="7" style="flex: 7; resize: none;"></textarea>
+            </div>
+    
+            <div class="form-group" style="display: flex; margin-bottom: 15px;">
+                <label for="ingredient" style="flex: 1;">Ingrédients<span style="color: red;" *ngIf="ingredientCtl.errors?.required">*</span></label>
+                <textarea type="text" id="ingredient" class="form-control" formControlName="ingredient" rows="7" style="flex: 7; resize: none;"></textarea>
+            </div>
+            <br>
+            <div style="text-align: center;">
+                <button type="submit" class="btn bt" style="color: black; background-color: white;" [disabled]="editForm.invalid">Modifier</button>
+            </div>
+        </form>
+        </div>
+    </div>
+</div>

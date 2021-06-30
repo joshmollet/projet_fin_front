@@ -1,0 +1,24 @@
+<div class="conteneur testi">
+    <div class="gauche">
+        <div>
+            <img src="{{produit.image_url}}" alt="Photo de {{produit.name}}" style="border-radius: 10%;">
+        </div>
+    </div>
+    <div class="droite">
+        <h2 *ngIf=estVide(produit.name)>{{produit.name}}</h2>
+        <p>En stock : {{produit.stock}}</p>
+        <h5 *ngIf=estVide(produit.description)>Description :</h5>
+        <p *ngIf=estVide(produit.description)>{{produit.description}}</p>
+        <h5 *ngIf=estVide(produit.emploi)>Emploi :</h5>
+        <p *ngIf=estVide(produit.emploi)>{{produit.emploi}}</p>
+        <h5 *ngIf=estVide(produit.ingredient)>Ingrédients :</h5>
+        <p *ngIf=estVide(produit.ingredient)>{{produit.ingredient}}</p>
+        <div style="width: 50%; margin: auto;">
+            
+            <h5>{{produit.price}}€ 
+                <button class="btn btn-success" (click)=achat()>Acheter<i class="fas fa-shopping-cart"></i></button>
+                <button class="btn btn-primary" routerLink='edit' *ngIf=isAdmin>Modifier</button>
+            </h5>
+        </div>
+    </div>
+</div>

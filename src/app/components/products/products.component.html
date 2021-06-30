@@ -1,0 +1,9 @@
+<div class="tout testi">
+    <!-- <a class="btn btn-success nouveau" *ngIf=isAdmin role="button" routerLink='create'><i class="fas fa-plus"></i> Ajouter un nouveau produit</a> -->
+    <button class="btn btn-success" *ngIf=isAdmin routerLink='create'><i class="fas fa-plus"></i> Ajouter un nouveau produit</button>
+    <div *ngFor="let produit of produitsList" class="conteneur" routerLink='ref/{{ produit.reference }}'>
+        <img src="{{ produit.image_url }}" alt="Photo de {{ produit.name }}" style="width: 150px;">
+        <p>{{ produit.name }}</p>
+        <p>{{ produit.price }}€</p>
+    </div>
+</div>

@@ -1,0 +1,21 @@
+<div class="testi">
+    <div style="text-align: center;">
+        <button class="btn btn-success" *ngIf=isAdmin routerLink='create'><i class="fas fa-plus"></i> Ajouter un nouveau soin</button>
+    </div>
+    <table class="table" style="width: 60%; margin: auto;">
+        <thead>
+            <tr>
+                <th scope="col">Soins</th>
+                <!-- <th scope="col"></th> -->
+                <th scope="col">Prix</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let care of careList">
+                <td><pre class="texte" style="display: inline;"> {{ care.name }} </pre><small *ngIf="care.description != ''">({{ care.description }})</small></td>
+                <!-- <td>({{ care.description }})</td> -->
+                <td>{{ care.price }}€</td>
+            </tr>
+        </tbody>
+    </table>
+</div>

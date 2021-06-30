@@ -1,0 +1,19 @@
+.conteneur{
+    display: flex;
+    margin: auto;
+    width: 80%;
+}
+
+.gauche{
+    flex: 1;
+    margin: auto;
+}
+
+.droite{
+    flex: 2;
+    margin: auto;
+}
+
+.moitie>*{
+    text-align: center;
+}

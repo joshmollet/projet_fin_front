@@ -1,0 +1,25 @@
+.f{
+    width: 80%;
+    margin: auto;
+}
+
+.deux{
+    display: flex;
+}
+
+.petit{
+    flex: 1;
+}
+
+
+@media (min-width:991px){
+    .f{
+        margin: auto;
+        display: flex;
+    }
+    
+    .moit{
+        flex: 1;
+        margin: auto;
+    }
+}

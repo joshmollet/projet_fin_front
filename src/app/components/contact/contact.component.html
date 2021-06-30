@@ -1,0 +1,92 @@
+<div class="testi">
+    <h2 style="text-align: center;">Nous contacter</h2>
+    <div class="f">
+        <div class="moit">
+            <form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
+    
+    
+                <div class="form-group deux">
+                    <div class="petit">
+                        <label for="name" class="texte">Nom </label><span style="color: red;" *ngIf="nameCtl.errors?.required">*</span>
+                        <input type="text" id="name" class="form-control" formControlName="name">
+                    </div>
+                    <div class="petit"></div>
+                    <div class="petit">
+                        <label for="first_name" class="texte">Prénom</label><span style="color: red;" *ngIf="firstnameCtl.errors?.required">*</span>
+                        <input type="text" id="first_name" class="form-control" formControlName="firstname">
+                    </div>
+                </div>
+    
+                <div class="form-group deux">
+                    <div class="petit">
+                        <label for="email" class="texte">Email</label><span style="color: red;" *ngIf="emailCtl.errors?.required">*</span>
+                        <input type="email" id="email" class="form-control" formControlName="email">
+                    </div>
+                    <div class="petit"></div>
+                    <div class="petit">
+                        <label for="tel" class="texte">Numéro de téléphone</label><span style="color: red;" *ngIf="telCtl.errors?.required">*</span>
+                        <input type="text" id="tel" name="tel" class="form-control" formControlName="tel">
+                    </div>
+                </div>
+    
+                <div class="form-group">
+                    <label for="msg" class="texte">Message</label><span style="color: red;" *ngIf="msgCtl.errors?.required">*</span>
+                    <textarea id="msg" class="form-control" formControlName="msg" rows="7" style="resize: none;"></textarea>
+                </div>
+    
+                <br>
+                <div style="margin: auto; width: 20%;">
+                    <button type="submit" class="btn btn-primary bt" [disabled]="contactForm.invalid">Envoyer</button>
+                </div>
+                <!-- <input [formControl]="honeypot" class="hidden" type="text" /> -->
+                <div [ngClass]="!submitted? 'hidden' : 'visible'" class="center-text">
+                    <span>{{responseMessage}}</span>
+                </div>
+            </form>
+        </div>
+        <br>
+        <div class="moit f">
+            <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4 moit" style="text-align: center;">
+                <h6 class="text-uppercase fw-bold mb-4" class="texte">
+                  <i class="fas fa-clock me-3" style="color: #6c757d;"></i><b>Horaires</b>
+                </h6>
+                <!-- <p class="texte" style="font-size: 1.3rem;"><pre>Lundi :    Fermé</pre></p>
+                <p class="texte" style="font-size: 1.3rem;"><pre>Mardi :    9h - 18h</pre></p>
+                <p class="texte" style="font-size: 1.3rem;"><pre>Mercredi : 9h - 18h</pre></p>
+                <p class="texte" style="font-size: 1.3rem;"><pre>Jeudi :    9h - 18h</pre></p>
+                <p class="texte" style="font-size: 1.3rem;"><pre>Vendredi : 9h - 18h</pre></p>
+                <p class="texte" style="font-size: 1.3rem;"><pre>Samedi :   9h - 20h</pre></p>
+                <p class="texte" style="font-size: 1.3rem;"><pre>Dimanche : 10h - 13h</pre></p> -->
+                <pre class="texte" style="font-size: 1.3rem;">Lundi     :   Fermé</pre>
+                <pre class="texte" style="font-size: 1.3rem;">Mardi     :   9h - 18h</pre>
+                <pre class="texte" style="font-size: 1.3rem;">Mercredi  :   9h - 18h</pre>
+                <pre class="texte" style="font-size: 1.3rem;">Jeudi     :   9h - 18h</pre>
+                <pre class="texte" style="font-size: 1.3rem;">Vendredi  :   9h - 18h</pre>
+                <pre class="texte" style="font-size: 1.3rem;">Samedi    :   9h - 20h</pre>
+                <pre class="texte" style="font-size: 1.3rem;">Dimanche  :   10h - 13h</pre>
+            </div>
+    
+            <div class="moit" style="text-align: center;">
+                <h6 class="text-uppercase fw-bold mb-4" class="texte"><i class="fas fa-id-card me-3" style="color: #6c757d;"></i><b>Contact</b></h6>
+                <p class="texte" style="font-size: 1.3rem;">
+                    <i class="fas fa-envelope me-3" style="color: #6c757d;"></i>
+                    laura_viaene@hotmail.com
+                </p>
+                <p class="texte" style="font-size: 1.3rem;"><i class="fas fa-phone me-3" style="color: #6c757d;"></i> + 32 472 08 13 09</p>
+                <p class="texte" style="font-size: 1.3rem;"><i class="fas fa-home me-3" style="color: #6c757d;"></i>16 Rue du Curé, 7640, Antoing</p>
+                <p>
+                    <a href="https://www.facebook.com/lauraviaene21" class="me-4 text-reset" target="_blank">
+                      <i class="fab fa-facebook-f" style="color: #6c757d;"></i>
+                    </a>
+                    <a href="https://www.instagram.com/the_travel21/?hl=fr" class="me-4 text-reset" target="_blank">
+                      <i class="fab fa-instagram" style="color: #6c757d;"></i>
+                    </a>
+                </p>
+            </div>
+        </div>
+    </div>
+    <br>
+    <div style="text-align: center;">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2534.286824501022!2d3.4470078514737352!3d50.56603138680999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c2e13dff01d1b9%3A0xb1a7b9a8ba00ac67!2sRue%20du%20Cur%C3%A9%2016%2C%207640%20Antoing!5e0!3m2!1sfr!2sbe!4v1624352902000!5m2!1sfr!2sbe" width="80%" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+    </div>
+</div>

@@ -1,1 +1,53 @@
 /* You can add global styles to this file, and also import other style files */
+*::selection{
+    background-color: #212529;
+    color: white;
+}
+
+
+@import url('https://fonts.googleapis.com/css2?family=Courgette&family=Parisienne&family=Sacramento&display=swap');
+
+// font-family: 'Courgette', cursive;
+// font-family: 'Parisienne', cursive;
+// font-family: 'Sacramento', cursive;
+
+.onglet{
+    font-family: 'Sacramento', cursive;
+}
+
+.texte{
+    font-family: 'Parisienne', cursive;
+    font-size: 1.5rem;
+}
+
+.co{
+    font-family: 'Sacramento', cursive;
+    font-size: x-large;
+}
+
+h2, h5{
+    font-family: 'Courgette', cursive;
+}
+
+body{
+    position: relative;
+}
+
+footer{
+    position: absolute;
+    // bottom: 0;
+    width: 100%;
+}
+
+.testi{
+	animation: fade-in 1.2s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+}
+
+@keyframes fade-in {
+	0% {
+	  opacity: 0;
+	}
+	100% {
+	  opacity: 1;
+	}
+  }

@@ -1,0 +1,50 @@
+.tout{
+    width: 80%;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+
+.conteneur{
+    // flex: 1;
+    margin: 20px;
+    background-color: white;
+    border: 1px solid #dbca6a;
+    border-radius: 20%;
+    width: 200px;
+    text-align: center;
+    cursor: pointer;
+    transition:all 0.15s linear;
+}
+
+.conteneur>*{
+    width: 90%;
+    margin: auto;
+}
+
+img{
+    margin-top: 10px !important;
+}
+
+button{
+    // flex: 1;
+    margin: 20px;
+    border-radius: 20%;
+    width: 200px;
+    text-align: center;
+    cursor: pointer;
+    transition:all 0.15s linear;
+}
+
+.nouveau>*{
+    margin:auto;
+}
+
+button:hover{
+    transform: scale(1.25);
+}
+
+.conteneur:hover{
+    transform: scale(1.25);
+}
